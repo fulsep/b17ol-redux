@@ -11,6 +11,7 @@ import Login from './pages/Login'
 import Counter from './pages/Counter'
 import About from './pages/About'
 import Episode from './pages/Episode'
+import Profile from './pages/Profile'
 
 //Import store
 import store from './redux/store'
@@ -25,6 +26,9 @@ export default class App extends Component {
             <Route path='/login' render ={(props)=><Login {...props} />} />
             <PrivateRoute path='/counter'>
               <Counter />
+            </PrivateRoute>
+            <PrivateRoute path='/profile'>
+              <Profile />
             </PrivateRoute>
             <Route path='/about' render={()=><About />} />
             <Route path='/episode' render={()=><Episode />} />

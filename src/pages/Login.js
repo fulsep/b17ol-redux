@@ -16,10 +16,17 @@ class Login extends Component {
       password
     }
     this.props.login(data)
-    this.props.history.push('/')
   }
   onChangeText = (e)=>{
     this.setState({[e.target.name]:e.target.value})
+  }
+
+  componentDidUpdate(){
+    console.log(this.props.auth)
+    if(this.props.auth.isLogin){
+      console.log('ok')
+      this.props.history.push('/profile')
+    }
   }
   
   render() {
